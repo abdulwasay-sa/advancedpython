@@ -1,0 +1,97 @@
+import numpy as np
+
+Arithmatic Operations : 
+If the dimensions of two arrays are dissimilar, element-to-element operations are not possible. However, operations on arrays of non-similar shapes is still possible in NumPy, because of the broadcasting capability. We will see what is broadcasting is in the upcoming lessons.
+
+a = np.array([10,10,10])
+b = np.array([5,5,5])
+
+a + b
+Out[5] array([15, 15, 15])
+
+a - b
+Out[6] array([5, 5, 5])
+
+a * b
+Out[7] array([50, 50, 50])
+
+a / b
+Out[8] array([2., 2., 2.])
+
+a % 3
+Out[9] array([1, 1, 1], dtype=int32)
+
+a < 35
+Out[10] array([ True,  True,  True])
+
+a > 25
+array([False, False, False])
+
+a ** 2
+array([100, 100, 100], dtype=int32)
+
+dot function or method : 
+
+A = np.array([[1,1],[0,1]])
+B = np.array([[2,0],[3,4]])
+
+print('A:\n', A)
+print('B:\n', B)
+
+A:
+ [[1 1]
+ [0 1]]
+B:
+ [[2 0]
+ [3 4]]
+
+This gives element-wise multiplication
+
+A * B
+array([[2, 0],
+       [0, 4]])
+
+This gives matrix multiplication
+
+A.dot(B)
+array([[5, 4],
+       [3, 4]])
+
+np.dot(A,B)
+array([[5, 4],
+       [3, 4]])
+
+explanation of the above matrix multiplication:
+A:
+ [[1 1]		
+ [0 1]]
+B:
+ [[2 0]
+ [3 4]]
+
+1x2 + 1x3 = 5
+1x0 + 1x4 = 4
+
+0x2 + 1x3 = 3
+0x0 + 1x4 = 4
+
+Modifying an existing array rather than create a new one
+
+a *= 3
+a
+array([30, 30, 30])
+
+Unary Operators
+ages = np.array([12,15,18,20])
+
+ages.sum()
+65
+
+ages.min()
+12
+
+ages.max()
+20
+
+By default these operations apply to the array as though it were a list of numbers, regardless of its shape.
+However, by specifying the axis parameter you can apply operation along the specified axis of array.

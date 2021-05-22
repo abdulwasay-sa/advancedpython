@@ -1,0 +1,138 @@
+Overview - Numpy : Numpy is a numerical computation library used for all the numerical calculations,
+
+ and also for the scientific computation. It stands as a foundational library to all remaining libraries.
+
+numpy stands for numerical python === num - py
+
+we can also perform the statistical computing by using the numpy
+
+Datatype of Numpy : Numpy is having a datatype called as ndarray
+
+Overview of ndarray ====> number of dimensions array...
+
+Understanding :  Array is similar like a list.
+
+Interview : what i sthe difference between an array and a list? if given a choice to you which one would you be preferring?
+
+Array ===> internal implementation and working is very efficient in an array compared to list.
+
+# how to install numpy
+
+!pip install numpy
+Requirement already satisfied: numpy in c:\users\abdul.wasay\anaconda3\lib\site-packages (1.19.2)
+
+
+1. Create an array from a regular Python list or tuple using the array function
+
+array_one = np.array([1,2,3,4])
+array_one
+out[1] array([1, 2, 3, 4])
+
+numbers = [9,8,7,6]
+array_two = np.array(numbers)
+array_two 
+out[2]  array([9, 8, 7, 6])
+
+2. NumPy offers several functions to create arrays with initial placeholder contnent
+
+Create an array of zeros with desired shape (x,y)
+
+* x == number of rows
+
+* y == number of columns in array
+
+array_of_zeroes = np.zeros((3,4))
+array_of_zeroes
+
+out[3] array([[0., 0., 0., 0.],
+       	   [0., 0., 0., 0.],
+       	   [0., 0., 0., 0.]])
+
+Note : internal implementation of an array is float (decimal numbers)
+
+array_of_ones = np.ones((5,3))
+array_of_ones 
+
+out[4] array([[1., 1., 1.],
+       	   [1., 1., 1.],
+                     [1., 1., 1.],
+                     [1., 1., 1.],
+                     [1., 1., 1.]])
+
+# diff integer datatypes : int16, int32, int64
+
+3. Use dtype in order to specify the data type
+
+array_of_ones_int = np.ones((3,4),dtype=np.int16)
+array_of_ones_int
+
+out[5]	array([[1, 1, 1, 1],
+       	           [1, 1, 1, 1],
+       	           [1, 1, 1, 1]], dtype=int16)
+
+array_empty = np.empty((2,3))
+array_empty 
+
+out[6]	array([[2.27e-322, 0.00e+000, 0.00e+000],
+      	           [0.00e+000, 0.00e+000, 0.00e+000]])
+
+np.eye() creates an eyedentity matrix
+
+array_eye = np.eye(5) # 5+5 matrix
+array_eye
+
+out[7] array([[1., 0., 0., 0., 0.],
+       	   [0., 1., 0., 0., 0.],
+       	   [0., 0., 1., 0., 0.],
+       	   [0., 0., 0., 1., 0.],
+       	   [0., 0., 0., 0., 1.]])
+
+3. To create sequences of numbers, NumPy provides a function analogous to range that returns arrays instead of lists
+
+arrange(start,stop,step,dtype)
+
+array_of_evens = np.arange(2,20,2)
+array_of_evens
+
+out[8] array([ 2,  4,  6,  8, 10, 12, 14, 16, 18])
+
+It also accepts float arguments
+
+array_of_floats = np.arange(0,2,0.3)
+array_of_floats
+
+out[9] array([0. , 0.3, 0.6, 0.9, 1.2, 1.5, 1.8])
+
+# Linear array -----> single line   ===> (x)
+
+# two dimensionall array -----> two lines  ===> (x,y)
+
+# three dimensional array -----> three lines  ===> (x,y,z)
+
+Two dimensional arrays : 
+
+array_2d = np.array([(2,4,6),(3,5,7)]) # (x,y)
+array_2d
+
+out[10] array([[2, 4, 6],
+       	      [3, 5, 7]])
+
+array_2d.shape
+out[11] (2, 3)
+
+Using reshape to create n dimensional arrays : 
+np.arange(6) # (x)
+
+out[12] array([0, 1, 2, 3, 4, 5])
+
+array_nd = np.arange(6).reshape((3,2))  # 3 * 2 = 6      # 4 * 3 = 12
+array_nd
+
+Out[13]  array([[0, 1],
+                          [2, 3],
+                          [4, 5]])
+
+The reshape will only take arguments that multiply to the number function. For example: for arange(8), the posssible combinations for reshope are (2,4),(4,2),(2,2,2)
+
+
+
